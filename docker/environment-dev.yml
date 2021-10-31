@@ -1,0 +1,42 @@
+name: scrud-django
+channels:
+  - conda-forge
+dependencies:
+  # production
+  - python 3.7
+  - pip
+  - django
+  - djangorestframework
+  - psycopg2
+  - python-dotenv
+  # dev
+  # linter and tools
+  - black
+  - flake8
+  - isort
+  - mypy
+  - pre-commit
+  - seed-isort-config
+  # publishing
+  - rever
+  - twine
+  # devops
+  - docker-compose
+  # docs
+  - sphinx
+  - sphinx-autobuild
+  - sphinxcontrib-bibtex
+  - myst-parser
+  # tests
+  - factory_boy
+  - pytest
+  - pytest-cov
+  - pip:
+    # production
+    - django-jsonfield
+    # tools
+    - django-extensions
+    # tests
+    - safetydance-django
+    # docs
+    - solar-theme

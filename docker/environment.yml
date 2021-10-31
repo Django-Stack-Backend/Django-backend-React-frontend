@@ -1,0 +1,13 @@
+channels:
+  - conda-forge
+dependencies:
+  - python 3.7
+  - pip
+  - django
+  - djangorestframework
+  - django-cors-headers
+  - psycopg2
+  - python-decouple
+  - python-dotenv
+  - pip:
+    - django-jsonfield

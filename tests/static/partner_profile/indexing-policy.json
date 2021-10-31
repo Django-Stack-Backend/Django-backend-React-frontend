@@ -1,0 +1,10 @@
+{
+  "text": [
+    "name",
+    "display_name",
+    "slug"
+  ],
+  "name": "name",
+  "display_name": "display_name",
+  "slug": "slug"
+}

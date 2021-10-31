@@ -1,0 +1,70 @@
+{
+  "$id": "http://api.openteams.com/json-schema/WorkflowPolicy",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Workflow Policy",
+  "description": "The Workflow Policy for scrud-django ResourceType.",
+  "properties": {
+    "rbac_context": {
+      "type": "string",
+      "description": "String identifier for an access control context for role-based access control."
+    },
+    "resource_type": {
+      "type": "string",
+      "description": "RDF Type URI for the Resource Type this workflow applies to."
+    },
+    "initial_states": { "$ref": "#/definitions/StateDefinitionObject" },
+    "states": { "$ref": "#/definitions/StateDefinitionObject" },
+    "transitions": { "$ref": "#/definitions/TransitionDefinitionObject" }
+  },
+  "required": ["resource_type", "initial_states", "states", "transitions"],
+  "definitions": {
+    "StateDefinitionObject": {
+      "type": "object",
+      "description": "An object whose properties are state definitions.",
+      "additionalProperties": { "$ref": "#/definitions/StateDefinition" }
+    },
+    "StateDefinition": {
+      "type": "string",
+      "description": "A Common Expression Language expression defining the conditions that satisfy this state."
+    },
+    "TransitionDefinitionObject": {
+      "type": "object",
+      "description": "An object whose properties are transition definitions.",
+      "additionalProperties": { "$ref": "#/definitions/TransitionDefinition" }
+    },
+    "TransitionDefinition": {
+      "oneOf":  [
+        { "$ref": "#/definitions/TransitionSpecificationList" },
+        { "$ref": "#/definitions/TransitionSpecification"}
+      ]
+    },
+    "TransitionSpecificationList": {
+      "type": "array",
+      "description": "A list of transition specifications.",
+      "items": { "$ref": "#/definitions/TransitionSpecification" }
+    },
+    "TransitionSpecification": {
+      "type": "object",
+      "description": "An allowed transition from one or more states to one or more states.",
+      "properties": {
+        "from": { "$ref": "#/definitions/TransitionNodeDefinition" },
+        "to": { "$ref": "#/definitions/TransitionNodeDefinition" }
+      }
+    },
+    "TransitionNodeDefinition": {
+      "oneOf": [
+        { "$ref": "#/definitions/TransitionNodeList" },
+        { "$ref": "#/definitions/TransitionNode" }
+      ]
+    },
+    "TransitionNodeList": {
+      "type": "array",
+      "description": "A list of states by name",
+      "items": { "type": "string" }
+    },
+    "TransitionNode": {
+      "type": "string",
+      "description": "A transition state by name"
+    }
+  }
+}

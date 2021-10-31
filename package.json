@@ -1,0 +1,23 @@
+{
+  "name": "@openteamsinc/scrud-django",
+  "version": "1.0.0",
+  "description": "A Django application for SCRUD REST services. Semantic REST API generation.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/openteams/scrud-django.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/openteams/scrud-django/issues"
+  },
+  "homepage": "https://gitlab.com/openteams/scrud-django#readme"
+}

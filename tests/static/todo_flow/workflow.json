@@ -1,0 +1,18 @@
+{
+  "resource_type": "tests://ToDo",
+  "initial_states": {
+    "not started": "status == \"not started\"",
+    "in progress": "status == \"in progress\" && priority != null && priority != \"not rated\" && assignee != null",
+    "blocked": "status == \"blocked\" && priority != null && priority != \"not rated\" && assignee != null && blockers != null && size(blockers) > 0"
+  },
+  "states": {
+    "done": "status == \"done\" && priority != \"not rated\" && assignee != null",
+    "canceled": "status == \"canceled\""
+  },
+  "transitions": {
+    "start": {"from": "not started", "to": "in progress"},
+    "stop for blocker": {"from": ["not started", "in progress"], "to": "blocked"},
+    "cancel": {"from": ["not started", "in progress", "blocked"], "to": "canceled"},
+    "finish": {"from": ["not started", "in progress", "blocked"], "to": "done"}
+  }
+}

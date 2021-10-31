@@ -1,0 +1,29 @@
+{
+  "$id": "http:8123//localhost/json-schema/PartnerProfile",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Partner Profile",
+  "description": "A resource detailing an OpenTeams Partner.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The legal name of the Partner business entity."
+    },
+    "display_name": {
+      "type": "string",
+      "description": "The name to display when referencing the Partner."
+    },
+    "slug": {
+      "type": "string",
+      "description": "Suggested short name to use in URLs."
+    },
+    "logo": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of a logo to display for the Partner."
+    },
+    "id": {
+      "type": "string",
+      "description": "The system identifier for the Partner Profile resource."
+    }
+  }
+}

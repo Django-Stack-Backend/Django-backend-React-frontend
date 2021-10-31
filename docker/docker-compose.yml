@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+    scrud_db:
+      image: "postgres:10.10"
+      hostname: scrud_db
+      ports:
+        - "35432:35432"
+      volumes:
+        - scrud_db:/var/lib/postgresql/data
+      restart: always
+      command: -p 35432
+
+volumes:
+    scrud_db:

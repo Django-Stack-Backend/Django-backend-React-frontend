@@ -1,0 +1,34 @@
+{
+  "openteams": "http://api.openteams.com/json-ld/",
+  "@type": "http://api.openteams.com/json-ld/WorkflowPolicy",
+  "rbac_context": {
+    "@id": "openteams:AccessControlContext"
+  },
+  "resource_type": {
+    "@id": "openteams:ResourceTypeReference"
+  },
+  "initial_states": {
+    "@id": "openteams:InitialStates",
+    "@type": "openteams:States",
+    "@container": "@index",
+    "@index": "openteams:StateDefinition"
+  },
+  "states": {
+    "@id": "openteams:States",
+    "@container": "@index",
+    "@index": "openteams:StateDefinition"
+  },
+  "transitions": {
+    "@id": "openteams:Transitions",
+    "@container": "@index",
+    "@index": "openteams:TransitionDefinition",
+    "@context": {
+      "from": {
+        "@id": "openteams:TransitionFrom"
+      },
+      "to": {
+        "@id": "openteams:TransitionTo"
+      }
+    }
+  }
+}

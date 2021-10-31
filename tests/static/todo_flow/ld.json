@@ -1,0 +1,20 @@
+{
+  "schema": "http://schema.org/",
+  "openteams": "http://api.openteams.com/json-ld/",
+  "@type": "tests://ToDo",
+  "rbac_context": {
+    "@id": "openteams:RBACContext"
+  },
+  "title": {
+    "@id": "schema:title"
+  },
+  "status": {
+    "@id": "schema:status"
+  },
+  "priority": {
+    "@id": "schema:priority"
+  },
+  "assignee": {
+    "@id": "openteams:assignee"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "http://schema.org/",
+  "openteams": "http://api.openteams.com/json-ld/",
+  "@type": "schema:Organization",
+  "name": {
+    "@id": "schema:legalName"
+  },
+  "display_name": {
+    "@id": "schema:name"
+  },
+  "slug": {
+    "@id": "schema:identifier"
+  },
+  "logo": {
+    "@id": "schema:logo"
+  },
+  "id": {
+    "@id": "rdfs:id"
+  }
+}

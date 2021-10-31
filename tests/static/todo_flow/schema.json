@@ -1,0 +1,48 @@
+{
+  "$id": "tests://ToDo",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Partner Profile",
+  "description": "An example resource type for testing based on a todo list.",
+  "properties": {
+    "rbac_context": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["not started", "in progress", "blocked", "done", "canceled"]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "not rated"]
+    },
+    "assignee": {
+      "type": "string",
+      "format": "uri"
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/BlockerNote"
+      }
+    }
+  },
+  "required": ["title"],
+  "definitions": {
+    "BlockerNote": {
+      "properties": {
+        "blocked_by": {
+          "type": "string",
+          "format": "uri",
+          "description": "A resource indicating what is preventing starting or progress"
+        },
+        "explanation": {
+          "type": "string"
+        }
+      },
+      "required": ["explanation"]
+    }
+  }
+}

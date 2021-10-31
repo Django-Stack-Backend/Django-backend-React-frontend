@@ -1,0 +1,11 @@
+{
+  "openteams": "http://api.openteams.com/json-ld/",
+  "@type": "http://api.openteams.com/json-ld/IndexingPolicy",
+  "text": {
+    "@id": "openteams:TextIndexDocumentPolicy",
+    "@container": "@list"
+  },
+  "openteams:additionalProperties": {
+    "@id": "openteams:TextIndexFieldPolicy"
+  }
+}

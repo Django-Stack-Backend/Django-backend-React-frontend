@@ -1,0 +1,73 @@
+[tool.black]
+line-length = 88
+skip-string-normalization = true
+target-version = ["py36", "py37", "py38"]
+
+
+[settings]
+known_third_party = ["celpy", "django", "django_filters", "django_jsonfield_backport", "dotenv", "factory", "fastjsonschema", "haystack", "jsonpath_ng", "pytest", "rdflib", "rest_framework", "reversion", "safetydance", "safetydance_django", "safetydance_test", "scoped_rbac", "solar_theme"]
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.poetry]
+name = "scrud-django"
+version = "0.11.0"
+description = "A Django REST Framework app for Semantic CRUD."
+authors = ["David Charboneau <david@openteams.com>"]
+license = "BSD"
+repository = "https://gitlab.com/openteams/scrud-django"
+packages = [
+  { include = "scrud_django" }
+]
+
+[tool.poetry.dependencies]
+django = "^2.2.8"
+django-cors-headers = "^3.6.0"
+django-filter = "^2.4.0"
+django-jsonfield-backport = "^1.0.2"
+django-scoped-rbac = "^0"
+djangorestframework = "^3.11.0"
+jsonpath-ng = "^1.5.2"
+fastjsonschema = "^2.14.5"
+python = "^3.8"
+python-decouple = "^3.3"
+python-dotenv = "^0.15.0"
+safetydance-test = "^0.1.4"
+Whoosh = "^2.7.4"
+django-reversion = "^3.0.9"
+
+[tool.poetry.dev-dependencies]
+astor = { git="https://github.com/Quansight/astor.git", branch="issue-174" }
+black = "19.3b0"
+coverage = "^5.3.1"
+factory-boy = "^3.2.0"
+flake8 = "^3.8.4"
+pytest = "^6.2.1"
+pytest-cov = "^2.10.1"
+pytest-django = "^4.1.0"
+safetydance = { git="https://gitlab.com/openteams/safetydance.git", branch="python38" }
+safetydance-django = "^0.0.6"
+Sphinx = "^2.3.1"
+sphinxcontrib-django = "^0.5.1"
+sphinx-autobuild = "^2020.9.1"
+sphinx-rtd-theme = "^0.5.0"
+mypy = "^0.790"
+pre-commit = "^2.9.3"
+seed-isort-config = "^2.2.0"
+docker-compose = "^1.27.4"
+sphinxcontrib-bibtex = "^2.1.3"
+myst-parser = "^0.13.1"
+solar-theme = "^1.3.3"
+django-extensions = "^3.1.0"
+rdflib = "^5.0.0"
+rdflib-jsonld = "^0.5.0"
+django-haystack = "^3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry2conda]
+name = "scrud-django"

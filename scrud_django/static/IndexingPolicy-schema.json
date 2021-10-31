@@ -1,0 +1,19 @@
+{
+  "$id": "http://api.openteams.com/json-schema/IndexingPolicy",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Indexing Policy",
+  "description": "The text indexing policy for scrud-django ResourceType.",
+  "properties": {
+    "text": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "An array of json-paths to be added to the primary text index document for the Resource instances of the ResourceType."
+    }
+  },
+  "additionalProperties": {
+    "type": "string",
+    "description": "Property names are field names for indexing and property values are json-path strings to be indexed."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "rbac_context": "Very important things",
+  "title": "Get some thing done",
+  "status": "in progress",
+  "priority": "medium",
+  "assignee": "https://api.openteams.com/users/someone"
+}
